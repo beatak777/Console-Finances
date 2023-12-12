@@ -86,3 +86,48 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+// You have been given a dataset composed of arrays with two fields, Date and Profit/Losses.
+
+// Your task is to write JavaScript code that analyzes the records to calculate each of the following:
+// 
+
+// The total number of months included in the dataset.
+// finances.length 
+
+// The net total amount of Profit/Losses over the entire period.
+    // need a variable for each var netProfits and net netLosses
+// need to be able to compare the data for the loop that we are on to the tdata from the previous loop
+    // need variables for those two once we get into our loop 
+    // Need an if statement to make sure we are on at least month 2 array index before starting to figure profits and losses
+
+
+// The average of the changes in Profit/Losses over the entire period.
+     // Need a variable to track that
+     // that will   make use of the cirrent and previous variable we set up before
+
+// You will need to track what the total change in Profit/Losses are from month to month and then find the average.
+// (Total/(Number of months - 1))
+// The greatest increase in Profit/Losses (date and amount) over the entire period.
+   //need a variable for the greatest increasse
+   //on each iteration, compare the current change in profits/losses to whats currently stored 
+   // if the change is more replace whats currently stored 
+
+
+// The greatest decrease in Profit/Losses (date and amount) over the entire period.
+  // need a variable for the greatest decrease
+  // on each iteration compare the curret nchange in profits and losses to whats currently stored
+  // if the loss is greater replace whats currently stored in the variable
+
+  //variables 
+  //total number of months
+  //rolling total fo profits
+  // greatest increase (month and amount)
+  // greatest loss (month and amount)
+  // average of the changes 
+
+  // inside the loop: ( do it with a for loop)
+    // current data point
+    // previous data point
+
+
