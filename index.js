@@ -88,20 +88,15 @@ var finances = [
 ];
 
 // You have been given a dataset composed of arrays with two fields, Date and Profit/Losses.
-
 // Your task is to write JavaScript code that analyzes the records to calculate each of the following:
 // 
-
 // The total number of months included in the dataset.
 // finances.length 
-
 // The net total amount of Profit/Losses over the entire period.
 // need a variable for each var netProfits and net netLosses
 // need to be able to compare the data for the loop that we are on to the tdata from the previous loop
 // need variables for those two once we get into our loop 
 // Need an if statement to make sure we are on at least month 2 array index before starting to figure profits and losses
-
-
 // The average of the changes in Profit/Losses over the entire period.
 // Need a variable to track that
 // that will   make use of the cirrent and previous variable we set up before
@@ -112,8 +107,6 @@ var finances = [
 //need a variable for the greatest increasse
 //on each iteration, compare the current change in profits/losses to whats currently stored 
 // if the change is more replace whats currently stored 
-
-
 // The greatest decrease in Profit/Losses (date and amount) over the entire period.
 // need a variable for the greatest decrease
 // on each iteration compare the curret nchange in profits and losses to whats currently stored
@@ -146,6 +139,7 @@ for (var i = 0; i < finances.length; i++) {
   //total profits
   totalProfits += currentAmount;
 
+  //Average change
   if (i > 0) {
     average += currentAmount - finances[i - 1][1];
 
@@ -166,18 +160,8 @@ average /= (totalMonths - 1)
 
 console.log(`Financial Analysis`);
 console.log(`-------------------`)
-console.log(`Total Months: ${totalMonths}`); //good
+console.log(`Total Months: ${totalMonths}`);
 console.log(`Total: $${totalProfits.toFixed(2)}`);
-console.log(`Average Change: $${average.toFixed(2)}`); //good
+console.log(`Average Change: $${average.toFixed(2)}`);
 console.log(`Greatest Increase in Profits: ${greatestIncreaseMonth} ($${increase.toFixed(2)})`); //good
 console.log(`Greatest Decrease in Profits: ${greatestDecreaseMonth} ($${decrease.toFixed(2)})`);
-
-// alert(`
-// Financial Analysis
-// ------------------
-// Total Months: ${finances.length}
-// Total: $${}
-// Average Change:
-// Greatest Increase in Profit/Losses:
-// Greatest Decrease in Profit/Losses:
-// `)
