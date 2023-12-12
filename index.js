@@ -135,34 +135,33 @@ var totalProfits = 0;
 var totalLosses = 0;
 var increase = 0;
 var decrease = 0;
-// var decrease = finances[0][1]; not sure if it is needed
 var average = 0;
 var greatestIncreaseMonth = '';
 var greatestDecreaseMonth = '';
 var amount = 0; //added by askbcs help
 
 for (var i = 0; i < finances.length; i++) {
-  var profits = finances[i][1] - finances[i][1];
-
+  // var profits = finances[i][1] - finances[i][1];
   var currentAmount = finances[i][1];
   //total profits
   totalProfits += currentAmount;
 
-   if (i > 0) {
+  if (i > 0) {
     average += currentAmount - finances[i - 1][1];
-   }
 
-   
-  if (profits > increase) {
-    increase = profits;
-    greatestIncreaseMonth = finances[i][0];
-  }
-  if (profits < decrease) {
-    decrease = profits;
-    greatestDecreaseMonth = finances[i][0];
+    //To track Greatest Increase and Decrease
+    if (currentAmount - finances[i - 1][1] > increase) {
+      increase = currentAmount - finances[i - 1][1];
+      greatestIncreaseMonth = finances[i][0];
+    }
+
+    if (currentAmount - finances[i - 1][1] < decrease) {
+      decrease = currentAmount - finances[i - 1][1];
+      greatestDecreaseMonth = finances[i][0];
+    }
   }
 }
-average /= (totalMonths -1)
+average /= (totalMonths - 1)
 
 
 console.log(`Financial Analysis`);
