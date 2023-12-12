@@ -131,23 +131,42 @@ var finances = [
     // previous data point
 
     var totalMonths = finances.length;
-    var totalProfit = 0;
+    var totalProfits = 0;
     var increase = 0;
     var decrease = finances[0][1]; // the zero is the months and the 1 is the amounts from the list
     var average = 0;
+    var greatestIncreaseMonth = '';
+    var greatestDecreaseMonth = '';
 
-    
+    for (var i = 1; i < finances.length; i++) {
+      var profits = finances[i][1] - finances[i - 1][1]; //shortened previous to make it easier to type
 
+      //total profits
+      totalProfits += profits;
 
+      if (profits > increase) {
+        increase = profits;
+        greatestIncreaseMonth = finances[i][0];
+      }
+    }
 
-
-
-
-
-
-
-
+// average change
+average = totalProfits / (finances.length - 1);
 
 console.log(`Financial Analysis`);
+console.log(`-------------------`)
+console.log(`Total Months: ${totalMonths}` );
+console.log(`Total: $${totalProfits.toFixed(2)}`);
+console.log(`Average Change: $${average.toFixed(2)}`);
+console.log(`Greatest Increase in Profits: ${greatestIncreaseMonth} ($${increase.toFixed(2)})`);
+console.log(`Greatest Decrease in Profits: ${greatestDecreaseMonth} ($${decrease.toFixed(2)})`);
 
-    console.log(`Total Months: ` + totalMonths);
+// alert(`
+// Financial Analysis
+// ------------------
+// Total Months: ${finances.length}
+// Total: $${}
+// Average Change:
+// Greatest Increase in Profit/Losses:
+// Greatest Decrease in Profit/Losses:
+// `)
