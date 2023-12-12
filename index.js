@@ -121,7 +121,7 @@ var finances = [
 
   //variables 
   //total number of months
-  //rolling total fo profits
+  //rolling total of profits
   // greatest increase (month and amount)
   // greatest loss (month and amount)
   // average of the changes 
@@ -130,11 +130,24 @@ var finances = [
     // current data point
     // previous data point
 
-
     var totalMonths = finances.length;
-
-
-
+    var totalProfit = 0;
+    var increase = 0;
+    var decrease = finances[0][1]; // the zero is the months and the 1 is the amounts from the list
+    var average = 0;
 
     
+
+
+
+
+
+
+
+
+
+
+
+console.log(`Financial Analysis`);
+
     console.log(`Total Months: ` + totalMonths);
