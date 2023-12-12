@@ -144,10 +144,15 @@ var amount = 0; //added by askbcs help
 for (var i = 0; i < finances.length; i++) {
   var profits = finances[i][1] - finances[i][1];
 
-  var amount = finances[i][1];
+  var currentAmount = finances[i][1];
   //total profits
-  totalProfits += amount;
+  totalProfits += currentAmount;
 
+   if (i > 0) {
+    average += currentAmount - finances[i - 1][1];
+   }
+
+   
   if (profits > increase) {
     increase = profits;
     greatestIncreaseMonth = finances[i][0];
@@ -157,9 +162,8 @@ for (var i = 0; i < finances.length; i++) {
     greatestDecreaseMonth = finances[i][0];
   }
 }
+average /= (totalMonths -1)
 
-// average change
-average = totalProfits / (finances.length - 1);
 
 console.log(`Financial Analysis`);
 console.log(`-------------------`)
