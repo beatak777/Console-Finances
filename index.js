@@ -131,3 +131,10 @@ var finances = [
     // previous data point
 
 
+    var totalMonths = finances.length;
+
+
+
+
+    
+    console.log(`Total Months: ` + totalMonths);
